@@ -12,6 +12,15 @@
   <hr />
 </div>
 
+## Andrew's Edits:
+
+i need to:
+
+* fix leaderboards??
+* make daily challenges work
+
+
+
 GeoHub is a free and open source geography guessing game inspired by Geoguessr.
 
 For those unfamilar with Geoguessr, it uses Google Streetview to place you in a random location and you have to guess where you think you are in the world. You can move around and use clues around you such as Language, Architecture, Road Signs, etc... to make your guess. The objective is clear, the closer you are to the correct location, the more points you get.

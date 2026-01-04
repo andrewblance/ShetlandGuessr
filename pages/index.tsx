@@ -45,6 +45,7 @@ const Home: NextPage = () => {
         </div>
 
         <div className="other-gamemodes">
+          {/*
           <GamemodeCard
             title={COUNTRY_STREAK_DETAILS.name}
             titleColor="var(--blue-500)"
@@ -52,6 +53,7 @@ const Home: NextPage = () => {
             buttonText="Play Streaks"
             href="/streaks"
           />
+          */}
 
           <GamemodeCard
             title={DAILY_CHALLENGE_DETAILS.name}

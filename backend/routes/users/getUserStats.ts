@@ -36,8 +36,8 @@ const getUserStats = async (req: NextApiRequest, res: NextApiResponse) => {
       label: 'Average Game Score',
       data: averageGameScore && averageGameScore.length > 0 ? Math.ceil(averageGameScore[0].avgScore) : 0,
     },
-    { label: 'Completed Streak Games', data: streakGamesPlayed || 0 },
-    { label: 'Best Streak Game', data: bestStreakGame?.streak || 0 },
+    /* { label: 'Completed Streak Games', data: streakGamesPlayed || 0 }, */
+    /* { label: 'Best Streak Game', data: bestStreakGame?.streak || 0 }, */
     { label: 'Daily Challenge Wins', data: dailyChallengeWins || 0 },
   ]
 

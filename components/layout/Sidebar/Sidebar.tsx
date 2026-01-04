@@ -65,7 +65,7 @@ const Sidebar: FC = () => {
 
             <Item text="Ongoing Games" icon={<PlayIcon />} route="/ongoing" />
 
-            <Item text="Country Streaks" icon={<LightningBoltIcon />} route="/streaks" />
+            {/* <Item text="Country Streaks" icon={<LightningBoltIcon />} route="/streaks" /> */}
 
             <Item text="Daily Challenge" icon={<LocationMarkerIcon />} route="/daily-challenge" />
           </div>
