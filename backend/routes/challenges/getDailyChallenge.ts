@@ -8,7 +8,7 @@ type TopScoreType = TopScore & {
   highlight?: boolean
 }
 
-const LOCATION_COUNT = 250000
+const LOCATION_COUNT = 1000
 const COUNTRY_COUNT = 98
 
 const getDailyChallenge = async (req: NextApiRequest, res: NextApiResponse) => {

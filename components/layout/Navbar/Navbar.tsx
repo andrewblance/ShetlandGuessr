@@ -22,6 +22,7 @@ const Navbar: FC = () => {
           </span>
         </>
       )}
+      
 
       {!searchOpen && (
         <>
@@ -29,15 +30,20 @@ const Navbar: FC = () => {
             <AppLogo />
           </div>
 
+          {/*
           <div className="middleContainer">
             <Searchbar />
           </div>
+          */}
 
           <div className="rightContainer">
             <div className="rightWrapper">
+
+              {/*
               <button className="mobile-search" onClick={() => setSearchOpen(true)}>
                 <SearchIcon />
               </button>
+              */}
 
               {session && user.id ? (
                 <Link href={`/user/${user.id}`}>
