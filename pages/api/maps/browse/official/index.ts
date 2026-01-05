@@ -1,6 +1,7 @@
 /* eslint-disable import/no-anonymous-default-export */
 import { NextApiRequest, NextApiResponse } from 'next'
 import { collections, dbConnect, throwError } from '@backend/utils'
+import { ObjectId } from "mongodb"
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
   try {
@@ -14,7 +15,8 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
         ?.find({
           isPublished: true,
           isDeleted: { $exists: false },
-          creator: 'GeoHub',
+          // next line searches for me:
+          creator: new ObjectId("695a5203173128a1ca52947e"),
           description: { $ne: '' },
         })
         .skip(page * mapsPerPage)

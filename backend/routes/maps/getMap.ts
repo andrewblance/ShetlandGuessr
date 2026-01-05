@@ -24,7 +24,8 @@ const getMap = async (req: NextApiRequest, res: NextApiResponse) => {
     return throwError(res, 400, `This map has not been published or does not exist`)
   }
 
-  const isOfficialMap = mapDetails.creator === 'AndrewBlance'
+  // Check if map is a me map
+  const isOfficialMap = mapDetails.creator === new ObjectId("695a5203173128a1ca52947e") || mapDetails.creator === 'AndrewBlance'
 
   // If map is user created -> get the user details
   if (!isOfficialMap) {

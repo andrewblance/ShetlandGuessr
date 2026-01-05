@@ -99,7 +99,7 @@ const MapPage: FC = () => {
                   <div className="map-details">
                     <div className="name-wrapper">
                       <span className="name">{mapDetails.name}</span>
-                      {mapDetails.creator === 'GeoHub' && <VerifiedBadge size={20} />}
+                      {mapDetails.creator === "695a5203173128a1ca52947e" && <VerifiedBadge size={20} />}
                     </div>
                     {mapDetails.description && (
                       <span className="description">

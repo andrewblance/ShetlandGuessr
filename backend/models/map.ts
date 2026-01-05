@@ -6,7 +6,7 @@ type Map = {
   name: string
   description?: string
   previewImg: string
-  creator: 'GeoHub' | ObjectId
+  creator: 'AndrewBlance' | ObjectId
   isPublished?: boolean
   isDeleted?: boolean
   createdAt?: Date

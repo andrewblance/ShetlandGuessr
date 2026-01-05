@@ -61,7 +61,7 @@ const Sidebar: FC = () => {
 
             <Item text="Liked Maps" icon={<HeartIcon />} route="/liked" />
 
-            {/* <Item text="Find Maps" icon={<ViewGridIcon />} route="/maps" /> */}
+            <Item text="Find Maps" icon={<ViewGridIcon />} route="/maps" /> 
 
             {/* <Item text="Ongoing Games" icon={<PlayIcon />} route="/ongoing" /> */}
 
