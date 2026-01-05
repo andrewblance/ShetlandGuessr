@@ -16,8 +16,12 @@
 
 i need to:
 
-* fix leaderboards??
-* make daily challenges work
+* [DONE] fix leaderboards??
+* [DONE] make daily challenges work
+* make it so you can actually see viewpoints when you are creating your own map
+* change theme to make it brighter
+* new font?
+* new custom art
 
 
 
