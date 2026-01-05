@@ -17,12 +17,25 @@ import StyledCreateMapPage from '@styles/CreateMapPage.Styled'
 import { GoogleMapsConfigType, LocationType, MapType, PageType, StreetViewCoverageType } from '@types'
 import { PREVIEW_MAP_OPTIONS } from '@utils/constants/googleMapOptions'
 import { formatMonthYear, formatTimeAgo } from '@utils/dateHelpers'
-import { formatLargeNumber, mailman } from '@utils/helpers'
+import { formatLargeNumber, mailman, showToast } from '@utils/helpers'
 import { useBreakpoint, useConfirmLeave } from '@utils/hooks'
 
 const SelectionMap = dynamic(() => import('@components/SelectionMap/SelectionMap'), {
   ssr: false,
 })
+
+const SHETLAND_BOUNDS = {
+  minLat: 59.48,
+  maxLat: 60.93,
+  minLng: -2.28,
+  maxLng: -0.59,
+}
+
+const isInShetland = (lat: number, lng: number) =>
+  lat >= SHETLAND_BOUNDS.minLat &&
+  lat <= SHETLAND_BOUNDS.maxLat &&
+  lng >= SHETLAND_BOUNDS.minLng &&
+  lng <= SHETLAND_BOUNDS.maxLng
 
 const CreateMapPage: PageType = () => {
   const router = useRouter()
@@ -88,7 +101,19 @@ const CreateMapPage: PageType = () => {
     setIsLoading(false)
   }
 
+  // MAJOR CHANGES HERE
   const addNewLocations = (newLocations: LocationType[] | LocationType) => {
+
+    const asArray = Array.isArray(newLocations) ? newLocations : [newLocations]
+    // Filter to Shetland only
+    const allowed = asArray.filter((loc) => isInShetland(loc.lat, loc.lng))
+
+    // If nothing allowed, bail (you can also toast)
+    if (allowed.length === 0) {
+      return showToast('error', 'You can only choose locations in Shetland', 'mapEditor')
+      return
+    }
+
     setHaveLocationsChanged(true)
 
     if (Array.isArray(newLocations)) {
